@@ -1,5 +1,6 @@
 body{
     background-color: #EEEEEE;
+    overflow:hidden
 }
 #top{
     position: relative;
@@ -18,9 +19,8 @@ body{
     height: 100%;
     left: 25%;
     top: 50%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
 }
 #signUp_title{
     position: relative;
@@ -29,7 +29,13 @@ body{
     font-size: 30px;
     text-align: center;
     color: #592A1D;
-    margin-bottom: 70px;
+    margin-bottom: 50px;
+    text-align: center;
+    left: 37%;
+}
+.signUp_box{
+    position: relative;
+    left: 15%;
 }
 #input_box{
     width: 70%;
@@ -37,11 +43,30 @@ body{
     border: 1px solid #CACACA;
     border-radius : 10px;
     padding-left: 10px;
-    margin: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    left: 30%;
 }
 .smallfont{
     font-weight: bold;
     font-size: 18px;
     text-align:left;
     color: #592A1D;
+}
+#btn{
+    width: 80%;
+    text-align: right;
+}
+.signUp_button{
+    background-color: #FF744D;
+    border: none;
+    border-radius: 10px;
+    font-weight: normal;
+    font-size: 24px;
+    text-align:center;
+    color: #ffffff;
+    padding: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: right;
 }
