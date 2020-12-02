@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>밥먹다</title>
+    <link rel='stylesheet' href='./stylesheets/startStyle.css' type='text/css'/>
+  </head>
+  <body>
+    <div class="left">
+      <img id="logo" src="title.png">
+          <!-- 로그인 폼 -->
+          <form class="loginbox" action="/users/login" method="post">
+              <input type="text" placeholder="Email 입력" name="email" required class="input_box"><br>
+              <br>
+              <input type="password" placeholder="Password 입력" name="pwd" required class="input_box"><br>
+              <br>                  
+              <input type="submit" value="LOGIN" id="login_button"><br>
+              
+              <div id="signup_link">
+                <a href="/signup" style="font-size: 16px; font-weight: bolder; font-size: 14px;  color: #592A1D;">SIGN UP</a>
+              </div>
+          </form>
+   </div>
+  </body>
+</html>
