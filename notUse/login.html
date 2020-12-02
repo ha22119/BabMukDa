@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>밥먹다</title>
+    <link rel='stylesheet' href='./stylesheets/startStyle.css' />
+  </head>
+  <body>
+    <!-- <% if(isLogin){ %>
+    <a href="/users/logout"><button style="width:auto;">Logout (<%=userEmail%>)</button></a>
+    <% }else{ %>
+    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+    <% } %> -->
+    <div class="left">
+        <img id="logo" src="./image/title.png">
+            <!-- 로그인 폼 -->
+            <form class="loginbox" action="/users/login" method="post">
+                <input type="text" placeholder="Email 입력" name="email" required class="input_box"><br>
+                <br>
+                <input type="password" placeholder="Password 입력" name="pwd" required class="input_box"><br>
+                <br>                  
+                <input type="submit" value="LOGIN" id="login_button"><br>
+                
+                <div id="signup_link">
+                  <a href="/signUp.html" style="font-size: 16px;  color: #592A1D;">signUp</a>
+                </div>
+            </form>
+     </div>
+  </body>
+</html>
