@@ -7,15 +7,23 @@
   </head>
   <body>
     <div class="left">
-      <img id="logo" src="title.png">
+      <div class="bigFont">밥
+        <a class="smallFont">은</a>
+      </div>
+      <div class="bigFont">먹
+        <a class="smallFont">고</a>
+      </div>
+      <div class="bigFont">다
+        <a class="smallFont">니냐</a>
+      </div>
           <!-- 로그인 폼 -->
           <form class="loginbox" action="/users/login" method="post">
               <input type="text" placeholder="Email 입력" name="email" required class="input_box"><br>
               <br>
               <input type="password" placeholder="Password 입력" name="pwd" required class="input_box"><br>
               <br>                  
-              <input type="submit" value="LOGIN" id="login_button"><br>
-              
+              <button type="submit" value="LOGIN" id="login_button" onclick="location.href='/main'">LOGIN</button>
+              <br>
               <div id="signup_link">
                 <a href="/signup" style="font-size: 16px; font-weight: bolder; font-size: 14px;  color: #592A1D;">SIGN UP</a>
               </div>

@@ -16,10 +16,26 @@ body{
     left: 25%;
     width: 130px;
 }
+.bigFont{
+    position: relative;
+    font-size:56px;
+    font-weight: bold;
+    color: #ffffff;
+    width: 80%;
+    left: 20%;
+    top: 10%;
+    text-shadow: 5px 6px 0px #D05F3F;
+}
+.smallFont{
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 5px 6px 0px #D05F3F;
+}
 
 .loginbox{
     position: relative;
-    top: 400px;
+    top: 25%;
     text-align: center;
 }
 .input_box{
