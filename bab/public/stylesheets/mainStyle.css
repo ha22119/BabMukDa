@@ -15,9 +15,9 @@ body{
     width: 7%;
     height: fit-content;
     text-align: left;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    left: 5%;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    left: 3%;
     top: 0px;
 }
 .bigFont{
@@ -38,7 +38,7 @@ body{
 }
 #suggestion{
     position: absolute;
-    right: 13%;
+    right: 19%;
     top: 30%;
     font-size: 20px;
     font-weight: bolder;
@@ -46,9 +46,44 @@ body{
 }
 #monthly{
     position: absolute;
+    right: 10%;
+    top: 30%;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #ffffff;
+}
+#logout{
+    position: absolute;
     right: 3%;
     top: 30%;
     font-size: 20px;
     font-weight: bolder;
     color: #ffffff;
+}
+
+/* 아래 */
+.down{
+    position: relative;
+    top: 150px;
+    /* border: 4px solid red; */
+    text-align: center;
+    padding-left: 20% ;
+    padding-right: 20%;
+}
+.lists{
+    /* border: 4px solid yellow; */
+    text-align: center;
+}
+.lists thead th { 
+    border-top: 3px solid #D05F3F; 
+    border-bottom: 1px solid #e5e5e5; 
+    padding: 10px 0; 
+    /* text-align: center;  */
+}
+.lists thead a{
+    text-align: center;
+}
+.lists thead td{
+    text-align: center;
+    padding: 5px;
 }
