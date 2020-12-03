@@ -1,0 +1,54 @@
+body{
+    background-color: #fdfdfd;
+}
+.top {
+    width: 100%;
+    height:10%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #D05F3F;
+}
+#logo{
+    position: absolute;
+    background-color: #FF744D;
+    width: 7%;
+    height: fit-content;
+    text-align: left;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    left: 5%;
+    top: 0px;
+}
+.bigFont{
+    position: relative;
+    font-size:28px;
+    font-weight: bold;
+    color: #ffffff;
+    width: 80%;
+    left: 20%;
+    top: 10%;
+    text-shadow: 2px 2px 0px #D05F3F;
+}
+.smallFont{
+    font-size: 9px;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 1px 1px 0px #D05F3F;
+}
+#suggestion{
+    position: absolute;
+    right: 13%;
+    top: 30%;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #ffffff;
+}
+#monthly{
+    position: absolute;
+    right: 3%;
+    top: 30%;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #ffffff;
+}
