@@ -10,7 +10,6 @@ require('dotenv').config();
 var indexRouter = require('./routes/index');
 var signupRouter = require('./routes/signup');
 var mainRouter = require('./routes/main');
-
 var app = express();
 
 // view engine setup
@@ -23,7 +22,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//#region express-mysql-session
 var options = {
   host: process.env.DB_HOST,
   port: 3306,
@@ -32,17 +30,16 @@ var options = {
   database: process.env.DATABASE
 };
 
-// var sessionStore = new MySQLStore(options);
+var sessionStore = new MySQLStore(options);
 
-// app.use(session({
-//   HttpOnly:true,
-//   secret: process.env.SESSION_SECRET,
-//   store: sessionStore,
-//   resave: false,
-//   saveUninitialized: true     // 세션이 필요하기 전까지는 세션을 구동시키지 않는다(true)
-// }));
+app.use(session({
+  HttpOnly:true,
+  secret: process.env.SESSION_SECRET,
+  store: sessionStore,
+  resave: false,
+  saveUninitialized: true     // 세션이 필요하기 전까지는 세션을 구동x
+}));
 
-//미들웨어
 app.use('/', indexRouter);
 app.use('/signup', signupRouter);
 app.use('/main', mainRouter);

@@ -1,7 +1,7 @@
 var connection = require('./db')
 
 exports.selectUser = function(email, cb){
-    var email_string = String(email);
+        var email_string = email;
     connection.query('SELECT * FROM user WHERE email = ?', [email_string], function (error, results, fields) {
         if(error){
             cb(error);

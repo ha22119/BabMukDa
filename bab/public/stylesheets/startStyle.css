@@ -16,7 +16,7 @@ body{
     left: 25%;
     width: 130px;
 }
-.bigFont{
+/* .bigFont{
     position: relative;
     font-size:56px;
     font-weight: bold;
@@ -31,11 +31,11 @@ body{
     font-weight: bold;
     color: #ffffff;
     text-shadow: 3px 3px 0px #D05F3F;
-}
+} */
 
 .loginbox{
     position: relative;
-    top: 25%;
+    top: 10%;
     text-align: center;
 }
 .input_box{
