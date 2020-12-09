@@ -17,12 +17,13 @@
         <a class="smallFont">니냐</a>
       </div>
           <!-- 로그인 폼 -->
-          <form class="loginbox" action="/users/login" method="post">
+          <form class="loginbox" action="/main" method="post">
               <input type="text" placeholder="Email 입력" name="email" required class="input_box"><br>
               <br>
               <input type="password" placeholder="Password 입력" name="pwd" required class="input_box"><br>
               <br>                  
-              <button type="submit" value="LOGIN" id="login_button" onclick="location.href='/main'">LOGIN</button>
+              <button type="submit" value="LOGIN" id="login_button">LOGIN</button> 
+              <!-- onclick="location.href='/main' -->
               <br>
               <div id="signup_link">
                 <a href="/signup" style="font-size: 16px; font-weight: bolder; font-size: 14px;  color: #592A1D;">SIGN UP</a>
