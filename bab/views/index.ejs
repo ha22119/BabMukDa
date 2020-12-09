@@ -7,23 +7,15 @@
   </head>
   <body>
     <div class="left">
-      <div class="bigFont">밥
-        <a class="smallFont">은</a>
-      </div>
-      <div class="bigFont">먹
-        <a class="smallFont">고</a>
-      </div>
-      <div class="bigFont">다
-        <a class="smallFont">니냐</a>
-      </div>
-          <!-- 로그인 폼 -->
-          <form class="loginbox" action="/main" method="post">
-              <input type="text" placeholder="Email 입력" name="email" required class="input_box"><br>
+        <img src="/images/title.png" style="width: 30%; margin-top: 20%; margin-left: 20%; ">
+          
+        <!-- 로그인 폼 -->
+          <form class="loginbox" action="/" method="post">
+              <input type="text" placeholder="Email 입력" name="email" class="input_box" autocomplete="off" required><br>
               <br>
-              <input type="password" placeholder="Password 입력" name="pwd" required class="input_box"><br>
+              <input type="password" placeholder="Password 입력" name="pwd" class="input_box" autocomplete="off" required><br>
               <br>                  
               <button type="submit" value="LOGIN" id="login_button">LOGIN</button> 
-              <!-- onclick="location.href='/main' -->
               <br>
               <div id="signup_link">
                 <a href="/signup" style="font-size: 16px; font-weight: bolder; font-size: 14px;  color: #592A1D;">SIGN UP</a>

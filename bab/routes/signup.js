@@ -1,9 +1,6 @@
-var http = require('http');
 var express = require('express');
 var model = require('../models/usersDAO');
 var router = express.Router();
-var ejs = require('ejs'); 
-var fs = require('fs');
 
 router.get('/', function(req, res) {
     res.render('signup', { title: 'Express' }); // ejs(html) 뿌려주기
@@ -26,7 +23,7 @@ router.get('/', function(req, res) {
         }
       });
     }else{
-      res.send('에러');
+      res.send('<script type="text/javascript">alert("비밀번호와 재입력한 비밀번호가 일치하지 않습니다."); window.location="/signup"</script>');
     }
   });
   

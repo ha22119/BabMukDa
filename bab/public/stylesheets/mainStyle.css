@@ -2,6 +2,7 @@ body{
     background-color: #fdfdfd;
 }
 .top {
+    text-align: right;
     width: 100%;
     height:10%;
     position: absolute;
@@ -15,12 +16,12 @@ body{
     width: 7%;
     height: fit-content;
     text-align: left;
-    padding-top: 10px;
+    padding-top: 15px;
     padding-bottom: 15px;
     left: 3%;
     top: 0px;
 }
-.bigFont{
+/* .bigFont{
     position: relative;
     font-size:28px;
     font-weight: bold;
@@ -35,30 +36,33 @@ body{
     font-weight: bold;
     color: #ffffff;
     text-shadow: 1px 1px 0px #D05F3F;
-}
-#suggestion{
-    position: absolute;
-    right: 19%;
+} */
+#suggestion{ /* 급식건의 */
+    position: relative;
     top: 30%;
     font-size: 20px;
     font-weight: bolder;
     color: #ffffff;
+    background: none;
+    border: none;
 }
-#monthly{
-    position: absolute;
-    right: 10%;
+#monthly{ /* 이달의 급식 */
+    position: relative;
     top: 30%;
     font-size: 20px;
     font-weight: bolder;
     color: #ffffff;
+    background: none;
+    border: none;
 }
-#logout{
-    position: absolute;
-    right: 3%;
+#logout{ /* 로그아웃 */
+    position: relative;
     top: 30%;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bolder;
     color: #ffffff;
+    background: none;
+    border: none;
 }
 
 /* 아래 */
