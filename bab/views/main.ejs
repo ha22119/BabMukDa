@@ -5,51 +5,59 @@
         <link rel="stylesheet" href="./stylesheets/mainStyle.css"/>
         <title>밥먹다</title>
     </head>
-
+    <script>
+      function start(){
+              var num_st = num;
+              var title_st = title;
+              var user_id_st = user_id;
+              var agree_st = agree;
+              alert(num_st);
+            }            
+    </script>
     <body>
         <div class="up">
           <div class="top">
+                <span><button id="plus_sug" onclick="location.href='/plus_sug'">건의 하기</button></span>
                 <span><button id="suggestion">급식 건의</button></span>
                 <span><button id="monthly">이달의 급식</button></span>
-                <span><button id="logout">LOGOUT (<%= userEmail %>)</button></span> 
+                <span><button id="logout" onclick="location.href='/main/logout'">LOGOUT ( <%= userEmail %> )</button></span> 
               <div id="logo"> 
-                  <!-- <div class="bigFont">밥
-                      <a class="smallFont">은</a>
-                    </div>
-                    <div class="bigFont">먹
-                      <a class="smallFont">고</a>
-                    </div>
-                    <div class="bigFont">다
-                      <a class="smallFont">니냐</a>
-                    </div> -->
                     <img src="/images/title.png" style="width: 50%; margin-left: 25%;">
                   </div>
           </div>
         </div>
         <div class="down">
           <span style="font-size: 24px; color: #592A1D; font-weight: bold; ">전체 건의</span><br><br>
-          <table class="lists">
+          <table class="lists" style="background-color: #ffffff;">
               <colgroup>
-              <col width="80%">
+              <col width="4%">
+              <col width="70%">
               <col width="10%">
               <col width="10%">
+              <col width="6%">
             </colgroup>
               <thead>
                 <tr>
+                  <th scope="col">번호</th>
                   <th scope="col">제목</th>
                   <th scope="col">작성자</th>
                   <th scope="col">동의</th>
+                  <th scope="col">보기</th>
                 </tr>
               </thead>
               <tbody>
-                  <tr>
-                    <td class="title">
-                    <a>게</a>
-                  </td>
-                  <td class="name">2219하수민</td>
-                  <td class="agree">123</td>
-                  </tr>
-                  <tr height="1" style="background-color:#e5e5e5;"><td colspan="3"></td></tr>
+                <% list.forEach(function(val){ %>
+                  <form method="POST" action="/feedback">
+                    <tr id= 'item'>
+                      <td class="num"><%=val.feedback_id%></td>
+                      <td class="title"><%=val.title%></td>
+                      <td class="name"><%=val.user_id%></td>
+                      <td class="agree"><%=val.agree%></td>
+                      <td><button>보기</button></td>
+                      <tr height='1' style="background-color:#e5e5e5;"><td colspan="4"></td></tr> 
+                    </tr>
+                  </form>
+                <% }) %>
               </tbody>
             </table>
         </div>
