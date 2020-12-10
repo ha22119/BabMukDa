@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./stylesheets/feedbackStyle.css"/>
+        <title>밥먹다</title>
+    </head>
+
+    <body>
+        <!-- 이용자 !== 관리자 -->
+        <div class="up">
+          <div class="top">
+                <span><button id="suggestion">급식 건의</button></span>
+                <span><button id="monthly">이달의 급식</button></span>
+                <span><button id="logout" onclick="location.href='/main/logout'">LOGOUT (<%= userEmail %>)</button></span> 
+              <div id="logo"> 
+                    <img src="/images/title.png" style="width: 50%; margin-left: 25%;">
+                  </div>
+          </div>
+        </div>
+        <div class="down">
+            <div class="box">
+                <div style="margin-left: 10%; margin-right: 10%; margin-top: 5%; margin-bottom: 5%; font-size: 24px; font-weight: bolder; color: #592A1D">제목</div>
+                <div id="otherBox">ㅇㅇ</div>
+                <div id="feedbackBox">내용</div>
+                <button id='agreeButton' type="submit" formmethod='get'onclick="location.href='/feedback_something'">동의합니다</button>
+            </div>
+        </div>
+        <!-- 이용자 == 관리자 -->
+    </body>
+</html>

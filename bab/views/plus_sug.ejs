@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./stylesheets/plus_sugStyle.css"/>
+        <title>밥먹다_건의하기</title>
+    </head>
+    <body>
+        <div id="top"></div>
+        <div class="document">
+            <form class="sugg" action="/main/plus_suggestion" method="POST">
+                <input name="title" type="text" placeholder="제목을 입력하세요" class="title_input_box" autocomplete="off" required><br><br>
+                <textarea name="contents" type="text" s placeholder="내용을 입력하세요" class="input_box" autocomplete="off" required></textarea>
+                <br><br>
+                <div id="btn"><input type="submit" value="제출" class="button"><br></div>
+            </form>
+        </div>
+    </body>
+   
+</html>

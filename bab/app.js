@@ -10,6 +10,8 @@ require('dotenv').config();
 var indexRouter = require('./routes/index');
 var signupRouter = require('./routes/signup');
 var mainRouter = require('./routes/main');
+var feedbackRouter = require('./routes/feedback');
+var plus_sugRouter = require('./routes/plus_sug');
 var app = express();
 
 // view engine setup
@@ -43,6 +45,8 @@ app.use(session({
 app.use('/', indexRouter);
 app.use('/signup', signupRouter);
 app.use('/main', mainRouter);
+app.use('/feedback', feedbackRouter);
+app.use('/plus_sug', plus_sugRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
