@@ -24,10 +24,9 @@ router.get('/logout', (req, res)=>{
 });
 
 router.post('/plus_suggestion', function(req, res) { // insert가 들어온 경우
-  // model.insertFeedback(req.body,userEmail,isAdmin, ()=>{
-  //   res.send('<script type="text/javascript">alert("글작성 완료"); window.location="/"</script>');
-  // });
-  res.send(req);
+  model.insertFeedback(req.body,req.session.userEmail, ()=>{
+    res.send('<script type="text/javascript">alert("건의 작성 완료"); window.location="/main"</script>');
+  });
 });
 
 

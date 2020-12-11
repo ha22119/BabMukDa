@@ -20,9 +20,9 @@ exports.selectFeedback_something = function(feedback_id, cb){
     });
 }
 
-exports.insertFeedback = function(body,user_id, cb){
-    sql = 'INSERT INTO feedback (title,contents,user_id), actor) VALUES(?,?,?)';
-    values = [body.title, body.contents, user_id];
+exports.insertFeedback = function(body,user_id,cb){
+    sql = 'INSERT INTO feedback (title,contents,user_id,agree) VALUES(?,?,?,?)';
+    values = [body.title, body.contents, user_id,0];
     connection.query(sql, values, function(error, results, fields){
         if(error){
             console.log(error);
