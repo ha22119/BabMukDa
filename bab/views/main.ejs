@@ -18,7 +18,7 @@
         <div class="up">
           <div class="top">
                 <span><button id="plus_sug" onclick="location.href='/plus_sug'">건의 하기</button></span>
-                <span><button id="suggestion">급식 건의</button></span>
+                <span><button id="suggestion" onclick="location.href='/main'">급식 건의</button></span>
                 <span><button id="monthly">이달의 급식</button></span>
                 <span><button id="logout" onclick="location.href='/main/logout'">LOGOUT ( <%= userEmail %> )</button></span> 
               <div id="logo"> 
@@ -30,15 +30,15 @@
           <span style="font-size: 24px; color: #592A1D; font-weight: bold; ">전체 건의</span><br><br>
           <table class="lists" style="background-color: #ffffff;">
               <colgroup>
-              <col width="4%">
+              <!-- <col width="4%"> -->
               <col width="70%">
               <col width="10%">
               <col width="10%">
-              <col width="6%">
+              <col width="10%">
             </colgroup>
               <thead>
                 <tr>
-                  <th scope="col">번호</th>
+                  <!-- <th scope="col">번호</th> -->
                   <th scope="col">제목</th>
                   <th scope="col">작성자</th>
                   <th scope="col">동의</th>
@@ -49,7 +49,7 @@
                 <% list.forEach(function(val){ %>
                   <form method="POST" action="/feedback">
                     <tr id= 'item'>
-                      <td class="num"><%=val.feedback_id%></td>
+                      <!-- <td class="num"><%=val.feedback_id%></td> -->
                       <td class="title"><%=val.title%></td>
                       <td class="name"><%=val.user_id%></td>
                       <td class="agree"><%=val.agree%></td>

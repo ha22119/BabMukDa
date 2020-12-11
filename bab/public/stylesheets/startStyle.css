@@ -36,20 +36,13 @@ body{
 }
 #login_button{
     position: relative;
-    background-color: #592A1D;
+    background-color: #FF744D;
     border: none;
-    border-radius: 10px;
     cursor: pointer;
-    box-shadow: 5px 5px 0px 0px #D05F3F ;
     top: 30px;
-    width: 200px;
-    height: 50px;  
-    font-size: 17px;
-    font-weight: bold;
-    color: #ffffff;
 }
 #signup_link{
     position: relative;
     text-align: center;
-    top: 70px;
+    top: 60px;
 }
