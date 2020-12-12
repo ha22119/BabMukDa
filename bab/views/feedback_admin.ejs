@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./stylesheets/feedbackStyle.css"/>
+        <title>밥먹다</title>
+    </head>
+    <script>
+        function answer(e){
+            var childData = [];
+            var parent =e.parentNode;
+            var parent_child =parent.childNodes[0];
+            var answer = parent_child.nextSibling;
+            var num = parent.parentNode.childNodes[0].nextSibling;
+            childData.push(answer.value);
+            childData.push(num.innerText);
+            document.write('<form action="/feedback/answer" id="smb_form" method="post"><input type="hidden" id="childData" name="answer" value="'+ childData[0] +
+                '"><input type="hidden" id="childData" name="num" value="'+ childData[1] +'"></form>');
+            document.getElementById("smb_form").submit();
+        }
+    </script>
+    <body>
+        <div class="up">
+          <div class="top">
+                <span><button id="suggestion" onclick="location.href='/main'">급식 건의</button></span>
+                <span><button id="monthly">이달의 급식</button></span>
+                <span><button id="logout" onclick="location.href='/main/logout'">LOGOUT (<%= userEmail %>)</button></span> 
+              <div id="logo"> 
+                    <img src="/images/title.png" style="width: 50%; margin-left: 25%;">
+                  </div>
+          </div>
+        </div>
+        <!-- 이용자 == 관리자 -->
+        <div class="down">
+            <div class="box">
+                <% list.forEach(function(val){ %>
+                    <div style="color: #ffffff;" id="feedback_id"><%=val.feedback_id%></div>
+                    <div  name='2' style="margin-left: 10%; margin-right: 10%; margin-top: 5%; margin-bottom: 5%; font-size: 24px; font-weight: bolder; color: #592A1D"><%=val.title%></div>
+                        <div id="otherBox">
+                            <div style="width: 40%; left: 10%; float: left;">
+                                <a style="color: #592A1D;">작성자 : <%=val.user_id%></a>
+                            </div>
+                            <div style="width: 40%; right:10%; float: right;">
+                                <a style="color: #592A1D;" >동의 : <%=val.agree%> 명</a>
+                            </div>
+                        </div>
+                    <div id="feedbackBox"><%=val.contents%></div><br><br><br><br><br><br>
+                    <% list.forEach(function(val){%>
+                        <div id="otherBox" style="text-align: start; padding-left: 5%; padding-top: 3%;">
+                            <a style="font-size: 16px; color: #592A1D;">영양사 선생님의 답변</a><br><br>
+                            <div style="font-size: 16px; color: #592A1D;"><%=val.answer%></div>
+                        </div>
+                    <% }) %>
+                    <div id='answerBox' style="text-align: left; padding: 0%; ;">
+                        <textarea id='answer' name="answer" type="text" placeholder="답변을 입력해주세요" class="input_box" autocomplete="off" ></textarea>
+                        <button id='answerButton' onclick="answer(this)">답변하기</button>
+                    </div>
+                    <% }) %>
+            </div>
+        </div>
+    </body>
+</html>

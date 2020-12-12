@@ -2,20 +2,9 @@ var express = require('express');
 var router = express.Router();
 var model = require('../models/feedbackDAO');
 
-router.get('/', function(req, res) {
-  model.selectFeedback((results)=>{
-      res.render('main', { title: 'Express',
-      list: results,
-      isLogin: req.session.isLogin, 
-      userEmail: req.session.userEmail,
-      isAdmin : req.session.isAdmin
-    });
-  });
-});
-
 router.post('/', function(req, res) {
-  model.selectFeedback((results)=>{
-      res.render('main', { title: 'Express',
+  model.selectFeedback_noAnswer((results)=>{
+      res.render('main_noanswer', { title: 'Express',
       list: results,
       isLogin: req.session.isLogin, 
       userEmail: req.session.userEmail,
