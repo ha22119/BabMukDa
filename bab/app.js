@@ -5,13 +5,18 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
 var MySQLStore = require('express-mysql-session')(session);
+var favicon = require('serve-favicon');
 require('dotenv').config();
+
+
 
 var indexRouter = require('./routes/index');
 var signupRouter = require('./routes/signup');
 var mainRouter = require('./routes/main');
+var noAnswerRouter = require('./routes/main_noanswer');
 var feedbackRouter = require('./routes/feedback');
 var plus_sugRouter = require('./routes/plus_sug');
+// var monthlyRouter = require('./routes/monthly');
 var app = express();
 
 // view engine setup
@@ -23,6 +28,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.png')));
 
 var options = {
   host: process.env.DB_HOST,
@@ -46,7 +52,10 @@ app.use('/', indexRouter);
 app.use('/signup', signupRouter);
 app.use('/main', mainRouter);
 app.use('/feedback', feedbackRouter);
+app.use('/feedback_agree', feedbackRouter);
 app.use('/plus_sug', plus_sugRouter);
+app.use('/noAnswer', noAnswerRouter);
+// app.use('/monthly', monthlyRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
