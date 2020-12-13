@@ -63,31 +63,23 @@ body{
     cursor: pointer;
     margin-right: 1%;
 }
-
-/* 아래 */
 .down{
     position: relative;
     top: 150px;
-    /* border: 4px solid red; */
-    text-align: center;
-    padding-left: 20% ;
-    padding-right: 20%;
+    text-align: left;
 }
-.lists{
-    /* border: 4px solid yellow; */
-    text-align: center;
+#menuBox{
+    max-width: 5%; 
+    min-width: 3%; 
+    height: 50%;
+    border: 2px solid #E5E5E5;
+    border-radius: 5px;
+    font: bolder;
+    font-size: 12px;
+    color: #592A1D;
+    background-color: #ffffff;
+    padding:2%;
+    margin-left: 10px;
+    margin-right: 10px;
+
 }
-.lists thead th { 
-    border-top: 3px solid #D05F3F; 
-    border-bottom: 1px solid #e5e5e5; 
-    padding: 10px 0; 
-    /* text-align: center;  */
-}
-.lists thead a{
-    text-align: center;
-}
-.lists thead td{
-    text-align: center;
-    padding: 5px;
-}
-    

@@ -6,7 +6,7 @@
     <link rel='stylesheet' href='./stylesheets/startStyle.css' type='text/css'/>
   </head>
   <body>
-    <div class="left">
+    <div class="left" style="float: left;">
         <img src="/images/title.png" style="width: 30%; margin-top: 20%; margin-left: 20%; ">
           
         <!-- 로그인 폼 -->
@@ -22,5 +22,13 @@
               </div>
           </form>
    </div>
+    <div class="right" style="float: right; text-align: center;">
+      <div style="text-align: center; color: #592A1D; font-size: 36px; font-weight: bold;">오늘의 급식</div><br><br>
+      <% list.forEach(function(val){ %>
+              <span id='otherBox' style="float: left;">
+                    <a style="color: #592A1D;"><%=val.time%><br><br><%=val.menu%></a>
+                </span>
+      <% }) %>
+  </div>
   </body>
 </html>
