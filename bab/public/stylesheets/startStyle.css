@@ -10,6 +10,7 @@ body{
     left: 0px;
     background-color: #FF744D;
 }
+
 #logo{
     position: absolute;
     top: 15%;
@@ -45,4 +46,25 @@ body{
     position: relative;
     text-align: center;
     top: 60px;
+}
+.right {
+    margin-top: 100px;
+    width: 70%;
+    top: 0px;
+    left: 0px;
+}
+#otherBox{
+    max-width: 17%; 
+    min-width: 15%; 
+    height: 50%;
+    border: 2px solid #E5E5E5;
+    border-radius: 5px;
+    font: bolder;
+    font-size: 18px;
+    color: #592A1D;
+    background-color: #ffffff;
+    padding:4%;
+    margin-left: 40px;
+    margin-right: 40px;
+
 }
