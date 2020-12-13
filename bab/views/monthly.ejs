@@ -5,15 +5,15 @@
         <link rel="stylesheet" href="./stylesheets/monthlyStyle.css"/>
         <title>밥먹다</title>
     </head>
-    <!-- <script>
+    <script>
         function menuclick(e){
             var children = e.childNodes;
-            alert('작동'+e.getAttribute('id'));
-            alert();
-        // document.write('<form action="/feedback" id="smb_form" method="post"><input type="hidden" id="childData" name="childData" value="'+ childData +'"></form>');
-        // document.getElementById("smb_form").submit();
+            var data = [];
+            data.push(children[1].innerText);
+        document.write('<form action="/menu_eval" id="smb_form" method="post"><input type="hidden" id="num" name="num" value="'+ data +'"></form>');
+        document.getElementById("smb_form").submit();
       }
-    </script> -->
+    </script>
     <body>
         <div class="up">
           <div class="top">
@@ -30,8 +30,7 @@
             <% list.forEach(function(val){ %>
                 <%date = String(val.date);%>
                 <%real_date = date.substring(0,11);%>
-                <span id='menuBox' style="float: left; cursor: pointer;">
-                    <!-- onclick="menuclick(this)" -->
+                <span id='menuBox' style="float: left; cursor: pointer; " onclick="menuclick(this)">
                     <a style="color: #ffffff;" id="food_id"><%=val.food_id%></a><br>
                     <a style="color: #592A1D;" id="food_etc"><%=real_date%><br><br><%=val.time%><br><br><%=val.menu%></a>
                 </span>

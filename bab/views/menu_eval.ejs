@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./stylesheets/menu_evalStyle.css"/>
+        <title>밥먹다</title>
+    </head>
+    <script>
+        function del(e){
+            var parent = e.parentNode;
+            var data = [];
+            var child = e.childNodes[0];
+            // alert(data[0]);
+            // document.write('<form action="/delicious" id="smb_form" method="post"><input type="hidden" id="childData" name="childData" value="'+ data +'"></form>');
+            // document.getElementById("smb_form").submit();
+        }
+        function notDel(e){
+            // document.write('<form action="/sweet" id="smb_form" method="post"><input type="hidden" id="childData" name="childData" value="'+ data +'"></form>');
+            // document.getElementById("smb_form").submit();
+        }
+        function salty(e){
+            // document.write('<form action="/salty" id="smb_form" method="post"><input type="hidden" id="childData" name="childData" value="'+ data +'"></form>');
+            // document.getElementById("smb_form").submit();
+        }
+        function sweet(e){
+            // document.write('<form action="/not_delicious" id="smb_form" method="post"><input type="hidden" id="childData" name="childData" value="'+ data +'"></form>');
+            // document.getElementById("smb_form").submit();
+        }
+    </script>
+    <body>
+        <!-- 이용자 !== 관리자 -->
+        <div class="up">
+          <div class="top">
+                <span><button id="suggestion" onclick="location.href='/main'">급식 건의</button></span>
+                <span><button id="monthly" onclick="location.href='/monthly'">이달의 급식</button></span>
+                <span><button id="logout" onclick="location.href='/main/logout'">LOGOUT (<%= userEmail %>)</button></span> 
+              <div id="logo"> 
+                    <img src="/images/title.png" style="width: 50%; margin-left: 25%;">
+                  </div>
+          </div>
+        </div>
+        <div class="down">
+            <div class="box" style="padding-bottom: 5%;">
+                <% list.forEach(function(val){ %>
+                <div style="color: #ffffff;" id="feedback_id" name='1'><%=val.food_id%></div>
+                <%date = String(val.date);%>
+                <%real_date = date.substring(0,11);%>
+                <div  name='2' style="margin-left: 10%; margin-right: 10%; margin-top: 5%; margin-bottom: 5%; font-size: 24px; font-weight: bolder; color: #592A1D"><%=real_date%> <%=val.time%></div>
+                    <div id="otherBox" name='3'>
+                        <div><br>
+                            <a style="color: #592A1D;">맛있어요 : <%=val.delicious%> 명</a>
+                        </div>
+                        <div><br>
+                            <a style="color: #592A1D;" >달아요 : <%=val.sweet%> 명</a>
+                        </div>
+                        <div><br>
+                            <a style="color: #592A1D;" >짜요 : <%=val.salty%> 명</a>
+                        </div>
+                        <div><br>
+                            <a style="color: #592A1D;" >맛없어요 : <%=val.not_delicious%> 명</a>
+                        </div>
+                    </div>
+                    <div name='4' id="feedbackBox"><%=val.menu%></div><br>
+                <% }) %>
+                    <button id = 'button' onclick="del(this)">맛있어요</button>
+                    <button id = 'button' onclick="notDel(this)">맛없어요</button>
+                    <button id = 'button' onclick="salty(this)">짜요</button>
+                    <button id = 'button' onclick="sweet(this)">달아요</button>
+            </div>
+        </div>
+    </body>
+</html>

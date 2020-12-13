@@ -1,0 +1,91 @@
+body{
+    background-color: #fdfdfd;
+}
+.top {
+    text-align: right;
+    width: 100%;
+    height:10%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #D05F3F;
+}
+#logo{
+    position: absolute;
+    background-color: #FF744D;
+    width: 7%;
+    height: fit-content;
+    text-align: left;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    left: 3%;
+    top: 0px;
+}
+#suggestion{ /* 급식건의 */
+    position: relative;
+    top: 30%;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #ffffff;
+    background: none;
+    border: none;
+}
+#monthly{ /* 이달의 급식 */
+    position: relative;
+    top: 30%;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #ffffff;
+    background: none;
+    border: none;
+}
+#logout{ /* 로그아웃 */
+    position: relative;
+    top: 30%;
+    font-size: 15px;
+    font-weight: bolder;
+    color: #ffffff;
+    background: none;
+    border: none;
+    margin-right: 1%;
+}
+
+/* 아래 */
+.down{
+    position: relative;
+    top: 150px;
+    /* border: 4px solid red; */
+    text-align: center;
+    padding-left: 15% ;
+    padding-right: 15%;
+}
+.box{
+    border: 2px solid #E5E5E5;
+    border-radius: 5px;
+}
+#otherBox{
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-bottom: 3%;
+    padding-top: 2%;
+    padding-bottom:4.5%;
+    border: 2px solid #E5E5E5;
+    border-radius: 5px;
+    font: bolder;
+    font-size: 18px;
+    color: #592A1D;
+}
+#button{
+    background-color: #FF744D;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 3px 3px 3px 3px #E5E5E5 ;
+    top: 30px;
+    width: 180px;
+    height: 50px;  
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 3%;
+}
