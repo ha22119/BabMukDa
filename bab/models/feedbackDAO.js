@@ -21,7 +21,7 @@ exports.selectFeedback_noAnswer = function(cb){
 }
 
 exports.selectFeedback_mine = function(userEmail,cb){ // 유저 email 검색해서 작성자가 같으면 피드백 불러오기
-    connection.query('SELECT feedback.feedback_id, feedback.title, feedback.agree, feedback.user_id, FROM feedback where user_id in (SELECT email from user where user_id=?)',[userEmail], function (error, results, fields) {
+    connection.query('SELECT feedback.feedback_id, feedback.title, feedback.agree, feedback.user_id FROM feedback where user_id in(SELECT email from user where email=?)',[userEmail], function (error, results, fields) {
         if(error){
             console.log(error);
         }else{
