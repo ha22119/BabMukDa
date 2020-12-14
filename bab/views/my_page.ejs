@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./stylesheets/mainStyle.css"/>
+        <title>밥먹다</title>
+    </head>
+    <script>
+
+      function start(e){
+        var children = e.childNodes;
+        var childData = [];
+        for(var i=0; i<children.length; i++){
+          if(i === 1|| i === 5 || i === 7 || i ===3){
+            childData.push(children[i].innerText);
+          }
+        }
+        document.write('<form action="/feedback" id="smb_form" method="post"><input type="hidden" id="childData" name="childData" value="'+ childData +'"></form>');
+        document.getElementById("smb_form").submit();
+      }
+
+    </script>
+    <body>
+        <div class="up">
+          <div class="top">
+                <span><button id="suggestion" onclick="location.href='/main'">급식 건의</button></span>
+                <span><button id="monthly" onclick="location.href='/monthly'">이달의 급식</button></span>
+                <span><button id="my" onclick="location.href='/my_page'">MY</button></span>
+                <span><button id="logout" onclick="location.href='/main/logout'">LOGOUT ( <%= userEmail %> )</button></span> 
+              <div id="logo"> 
+                    <img src="/images/title.png" onclick="window.location='/main'" style="cursor: pointer; width: 50%; margin-left: 25%;">
+                  </div>
+          </div>
+        </div>
+        <div class="down">
+          <span style="font-size: 24px; color: #592A1D; font-weight: bold; ">내가 한 건의</span><br><br>
+          <table class="lists" style="background-color: #ffffff; width: 100%;">
+            <colgroup>
+            <col width="5%">
+            <col width="70%">
+            <col width="15%">
+            <col width="10%">
+          </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">번호</th>
+                <th scope="col">제목</th>
+                <th scope="col">작성자</th>
+                <th scope="col">동의</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% list.forEach(function(val){ %>
+                <tr id= 'item'  style="cursor: pointer;" onclick="start(this)">
+                  <td class="num"><%=val.feedback_id%></td>
+                  <td class="title"><%=val.title%></td>
+                  <td class="name"><%=val.user_id%></td>
+                  <td class="agree"><%=val.agree%></td>
+                  <tr height='1' style="background-color:#e5e5e5;"><td colspan="4"></td></tr> 
+                </tr>
+          <% }) %>
+            </tbody>
+          </table>
+        </div>
+    </body>
+</html>

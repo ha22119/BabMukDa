@@ -38,9 +38,10 @@
                 <span><button id="plus_sug" onclick="location.href='/plus_sug'">건의 하기</button></span>
                 <span><button id="suggestion" onclick="location.href='/main'">급식 건의</button></span>
                 <span><button id="monthly" onclick="location.href='/monthly'">이달의 급식</button></span>
+                <span><button id="my" onclick="location.href='/my_page'">MY</button></span>
                 <span><button id="logout" onclick="location.href='/main/logout'">LOGOUT ( <%= userEmail %> )</button></span> 
               <div id="logo"> 
-                    <img src="/images/title.png" style="width: 50%; margin-left: 25%;">
+                    <img src="/images/title.png" onclick="window.location='/main'" style="cursor: pointer; width: 50%; margin-left: 25%;">
                   </div>
           </div>
         </div>
@@ -51,7 +52,7 @@
           <button onclick="noAnswer()" style="font-size: 16px; font-weight: bolder; color: #592A1D; border: none; 
           background-color: #ffffff;border-bottom: 4px solid #FF744D; cursor: pointer;">답변 안된 건의글</button><br><br>
           <span style="font-size: 24px; color: #592A1D; font-weight: bold; ">답변 안된 건의</span><br><br>
-          <table class="lists" style="background-color: #ffffff;">
+          <table class="lists" style="background-color: #ffffff; width: 100%;">
               <colgroup>
               <col width="5%">
               <col width="70%">
@@ -71,7 +72,7 @@
                   <tr id= 'item'  style="cursor: pointer;" onclick="start(this)">
                     <td class="num"><%=val.feedback_id%></td>
                     <td class="title"><%=val.title%></td>
-                    <td class="name"><%=val.user_id%></td>
+                    <td class="name"><%=val.username%></td>
                     <td class="agree"><%=val.agree%></td>
                     <tr height='1' style="background-color:#e5e5e5;"><td colspan="4"></td></tr> 
                   </tr>

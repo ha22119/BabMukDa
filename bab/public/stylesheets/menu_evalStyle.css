@@ -28,7 +28,9 @@ body{
     font-weight: bolder;
     color: #ffffff;
     background: none;
+    cursor: pointer;
     border: none;
+    margin-right: 30px;
 }
 #monthly{ /* 이달의 급식 */
     position: relative;
@@ -38,6 +40,21 @@ body{
     color: #ffffff;
     background: none;
     border: none;
+    cursor: pointer;
+    margin-right: 30px;
+    
+}
+#my{ /* 급식건의 */
+    position: relative;
+    top: 30%;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #ffffff;
+    background: none;
+    cursor: pointer;
+    border: none;
+    margin-right: 30px;
+
 }
 #logout{ /* 로그아웃 */
     position: relative;
@@ -47,7 +64,19 @@ body{
     color: #ffffff;
     background: none;
     border: none;
+    cursor: pointer;
     margin-right: 1%;
+}
+#plus_sug{
+    position: relative;
+    top: 30%;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #ffffff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 30px;
 }
 
 /* 아래 */

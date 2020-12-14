@@ -1,7 +1,7 @@
 var connection = require('./db')
 
 exports.selectFeedback = function(cb){
-    connection.query('SELECT * FROM feedback', function (error, results, fields) {
+    connection.query('SELECT feedback.feedback_id, feedback.title, feedback.agree, user.username FROM feedback left outer join user on feedback.user_id = user.email', function (error, results, fields) {
         if(error){
             console.log(error);
         }else{
@@ -10,7 +10,18 @@ exports.selectFeedback = function(cb){
     });
 }
 exports.selectFeedback_noAnswer = function(cb){
-    connection.query('SELECT * FROM feedback where isanswer = 0', function (error, results, fields) {
+    // connection.query('SELECT * FROM feedback where feedback_id not IN(SELECT feedback_id FROM feedback where isanswer=1)', function (error, results, fields) {
+        connection.query('SELECT feedback.feedback_id, feedback.title, feedback.agree, user.username FROM feedback left outer join user on feedback.user_id = user.email where isanswer = 0', function (error, results, fields) {
+        if(error){
+            console.log(error);
+        }else{
+            cb(results);
+        }
+    });
+}
+
+exports.selectFeedback_mine = function(userEmail,cb){ // 유저 email 검색해서 작성자가 같으면 피드백 불러오기
+    connection.query('SELECT feedback.feedback_id, feedback.title, feedback.agree, feedback.user_id, FROM feedback where user_id in (SELECT email from user where user_id=?)',[userEmail], function (error, results, fields) {
         if(error){
             console.log(error);
         }else{
@@ -57,7 +68,6 @@ exports.updateFeedback_agree = function(id, cb){
             var agree_st = results[0].agree +1;
             sql = `UPDATE feedback SET agree = ? WHERE feedback_id = ?`;
             var agree = parseInt(agree_st);
-            var id = parseInt(feedback_id);
             values = [agree, feedback_id];
             connection.query(sql, values, function(error, results, fields){
                 if(error){
@@ -79,10 +89,7 @@ exports.updateFeedback_agree = function(id, cb){
 exports.updateFeedback_answer = function(num, answer, cb){
     sql = `UPDATE feedback SET isanswer = ?, answer = ? WHERE feedback_id = ?`;
     var feedback_id = parseInt(num);
-    console.log(typeof(feedback_id));
-    console.log(answer);
     values = [1,answer ,feedback_id];
-    console.log(values);
     connection.query(sql, values, function(error, results, fields){
         if(error){
             console.log('UPDATE ERROR');

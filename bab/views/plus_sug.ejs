@@ -6,7 +6,11 @@
         <title>밥먹다_건의하기</title>
     </head>
     <body>
-        <div id="top"></div>
+        <div id="top">
+            <div id="logo"> 
+                <img src="/images/title.png" onclick="window.location='/main'"style="cursor: pointer; width: 50%; margin-left: 25%;">
+              </div>
+        </div>
         <div class="document">
             <form class="sugg" action="/main/plus_suggestion" method="POST">
                 <input name="title" type="text" placeholder="제목을 입력하세요" class="title_input_box" autocomplete="off" required><br><br>
