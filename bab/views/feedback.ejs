@@ -7,22 +7,21 @@
     </head>
     <script>
         function agree(e){
-            // alert('작동');
             var parent =e.previousSibling.previousSibling.previousSibling;
             var childData = [];
             var child = parent.previousSibling.previousSibling.previousSibling.previousSibling.previousSibling.previousSibling.previousSibling;
             childData.push(child.innerText);
-            // alert(childData);
             document.write('<form action="/feedback/feedback_agree" id="smb_form" method="post"><input type="hidden" id="childData" name="num" value="'+ childData +'"></form>');
             document.getElementById("smb_form").submit();
         }
     </script>
     <body>
-        <!-- 이용자 !== 관리자 -->
         <div class="up">
           <div class="top">
+            <span><button id="plus_sug" onclick="location.href='/plus_sug'">건의 하기</button></span>
                 <span><button id="suggestion" onclick="location.href='/main'">급식 건의</button></span>
                 <span><button id="monthly" onclick="location.href='/monthly'">이달의 급식</button></span>
+                <span><button id="my" onclick="location.href='/my_page'">MY</button></span>
                 <span><button id="logout" onclick="location.href='/main/logout'">LOGOUT (<%= userEmail %>)</button></span> 
               <div id="logo"> 
                     <img src="/images/title.png" style="width: 50%; margin-left: 25%;">
@@ -43,10 +42,15 @@
                         </div>
                     </div>
                 <div name='4' id="feedbackBox"><%=val.contents%></div><br><br>
-                <button id='agreeButton' onclick="agree(this)">동의합니다</button>
-                <br><br><br><br><br><br>
+                <% if(String(userEmail) == val.user_id) { %>
+                    <button id='agreeButton' style="background-color: #592A1D;">동의합니다</button>
+                    <br><br><br><br><br><br>
+                <% }else{ %>
+                    <button id='agreeButton' onclick="agree(this)">동의합니다</button>
+                    <br><br><br><br><br><br>
+                <% }%>
                 <% }) %>
-                    <% list.forEach(function(val){%>
+                    <% list.forEach(function(val){ %>
                         <div id="otherBox" style="text-align: start; padding-left: 5%; padding-top: 3%;">
                             <a style="font-size: 16px; color: #592A1D;">영양사 선생님의 답변</a><br><br>
                             <div style="font-size: 16px; color: #592A1D;"><%=val.answer%></div>

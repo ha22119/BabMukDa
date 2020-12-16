@@ -9,7 +9,6 @@ router.get('/', function(req, res) {
       isLogin: req.session.isLogin, 
       userEmail: req.session.userEmail,
       isAdmin : req.session.isAdmin,
-      // isAnswer : req.body.isanswer
     });
   });
 });
@@ -54,7 +53,6 @@ router.post('/', function(req, res) {
           isLogin: req.session.isLogin, 
           userEmail: req.session.userEmail,
           isAdmin : req.session.isAdmin,
-          // isAnswer : req.body.isanswer
       });
     });
   }else{

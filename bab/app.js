@@ -17,6 +17,8 @@ var noAnswerRouter = require('./routes/main_noanswer');
 var feedbackRouter = require('./routes/feedback');
 var plus_sugRouter = require('./routes/plus_sug');
 var monthlyRouter = require('./routes/monthly');
+var evalRouter = require('./routes/menu_eval');
+var myRouter = require('./routes/my_page');
 var app = express();
 
 // view engine setup
@@ -56,6 +58,8 @@ app.use('/feedback_agree', feedbackRouter);
 app.use('/plus_sug', plus_sugRouter);
 app.use('/noAnswer', noAnswerRouter);
 app.use('/monthly', monthlyRouter);
+app.use('/menu_eval', evalRouter);
+app.use('/my_page', myRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,5 +1,5 @@
 body{
-    background-color: #EEEEEE;
+    background-color: #fafafa;
     overflow:hidden
 }
 #top{
@@ -9,12 +9,23 @@ body{
     position: absolute;
     top: 0px;
     left: 0px;
+    background-color: #D05F3F;
+}
+#logo{
+    position: absolute;
     background-color: #FF744D;
+    width: 7%;
+    height: fit-content;
+    text-align: left;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    left: 3%;
+    top: 0px;
 }
 
 .document{
     position: relative;
-    background: #FFFFFF;
+    background: #ffffff;
     width: 50%;
     left: 25%;
     margin-top: 2%;

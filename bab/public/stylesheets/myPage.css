@@ -21,7 +21,6 @@ body{
     left: 3%;
     top: 0px;
 }
-
 #suggestion{ /* 급식건의 */
     position: relative;
     top: 30%;
@@ -106,4 +105,3 @@ body{
     text-align: center;
     padding: 5px;
 }
-    

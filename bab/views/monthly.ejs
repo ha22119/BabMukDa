@@ -5,24 +5,24 @@
         <link rel="stylesheet" href="./stylesheets/monthlyStyle.css"/>
         <title>밥먹다</title>
     </head>
-    <!-- <script>
+    <script>
         function menuclick(e){
             var children = e.childNodes;
-            alert('작동'+e.getAttribute('id'));
-            alert();
-        // document.write('<form action="/feedback" id="smb_form" method="post"><input type="hidden" id="childData" name="childData" value="'+ childData +'"></form>');
-        // document.getElementById("smb_form").submit();
+            var data = [];
+            data.push(children[1].innerText);
+        document.write('<form action="/menu_eval" id="smb_form" method="post"><input type="hidden" id="num" name="num" value="'+ data +'"></form>');
+        document.getElementById("smb_form").submit();
       }
-    </script> -->
+    </script>
     <body>
         <div class="up">
           <div class="top">
-                <span><button id="plus_sug" onclick="location.href='/plus_sug'">건의 하기</button></span>
                 <span><button id="suggestion" onclick="location.href='/main'">급식 건의</button></span>
                 <span><button id="monthly" onclick="location.href='/monthly'">이달의 급식</button></span>
+                <span><button id="my" onclick="location.href='/my_page'">MY</button></span>
                 <span><button id="logout" onclick="location.href='/main/logout'">LOGOUT ( <%= userEmail %> )</button></span> 
               <div id="logo"> 
-                    <img src="/images/title.png" style="width: 50%; margin-left: 25%;">
+                    <img src="/images/title.png" onclick="window.location='/main'" style="cursor: pointer; width: 50%; margin-left: 25%;">
                   </div>
           </div>
         </div>
@@ -30,8 +30,7 @@
             <% list.forEach(function(val){ %>
                 <%date = String(val.date);%>
                 <%real_date = date.substring(0,11);%>
-                <span id='menuBox' style="float: left; cursor: pointer;">
-                    <!-- onclick="menuclick(this)" -->
+                <span id='menuBox' style="float: left; cursor: pointer; " onclick="menuclick(this)">
                     <a style="color: #ffffff;" id="food_id"><%=val.food_id%></a><br>
                     <a style="color: #592A1D;" id="food_etc"><%=real_date%><br><br><%=val.time%><br><br><%=val.menu%></a>
                 </span>
