@@ -52,7 +52,7 @@ exports.insertFeedback = function(body,user_id,cb){
     })
 }
 
-exports.updateFeedback_agree = function(id, cb){
+exports.updateFeedback_agree = function(userEmail_,id, cb){ //동의합니다 누르면 업데이트 
     function selcet(feedback_id, cb){ // 셀렉트 구문
         connection.query('SELECT * FROM feedback WHERE feedback_id = ?',[feedback_id], function (error, results, fields) {
             if(error){
@@ -62,20 +62,25 @@ exports.updateFeedback_agree = function(id, cb){
             }
         });
     }
-
     var feedback_id = parseInt(id);
     selcet(feedback_id,(results)=>{
             var agree_st = results[0].agree +1;
-            sql = `UPDATE feedback SET agree = ? WHERE feedback_id = ?`;
-            var agree = parseInt(agree_st);
-            values = [agree, feedback_id];
-            connection.query(sql, values, function(error, results, fields){
-                if(error){
-                    console.log('UPDATE ERROR');
-                }else{
-                    console.log('업데이트 완료');
-                }
-            });
+        
+            if(!results[0].who_agree.includes(userEmail_)){
+                console.log(userEmail_+' 포함 안 함')
+                console.log(results[0].who_agree)
+                sql = `UPDATE feedback SET agree = ?, who_agree = ? WHERE feedback_id = ?`;
+                var agree = parseInt(agree_st);
+                values = [agree, results[0].who_agree+=" "+userEmail_ ,feedback_id];
+                connection.query(sql, values, function(error, results, fields){
+                    if(error){
+                        console.log('UPDATE ERROR');
+                    }else{
+                        console.log('업데이트 완료');
+                    }
+                });
+            }
+
             connection.query('SELECT * FROM feedback WHERE feedback_id = ?',[feedback_id], function (error, results, fields) {
                 if(error){
                     console.log(error);
@@ -83,7 +88,7 @@ exports.updateFeedback_agree = function(id, cb){
                     cb(results);
                 }
             });
-        });
+     });
 }
 
 exports.updateFeedback_answer = function(num, answer, cb){
