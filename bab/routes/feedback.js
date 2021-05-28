@@ -16,14 +16,15 @@ router.get('/', function(req, res) {
 router.post('/feedback_agree', function(req, res) { // 내용 작성 후 post 했을때
   console.log('관리자? :'+req.session.isAdmin);
   console.log('번호 :'+req.body.num);
-  model.updateFeedback_agree(req.body.num,(results)=>{
+  console.log('아이디 :'+req.session.userEmail);
+  model.updateFeedback_agree(req.session.userEmail,req.body.num,(results)=>{
     //   res.render('feedback', { title: 'Express',
     //   list: results,
     //   isLogin: req.session.isLogin, 
     //   userEmail: req.session.userEmail,
     //   isAdmin : req.session.isAdmin
     // });
-    res.send('<script type="text/javascript">alert("동의했습니다."); window.location="/main"</script>');
+    res.send('<script type="text/javascript">window.location="/main"</script>');
   });
 });
 
